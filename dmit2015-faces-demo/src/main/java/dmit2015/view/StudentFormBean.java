@@ -49,7 +49,7 @@ public class StudentFormBean implements Serializable {
         FacesMessage message = new FacesMessage(
                 FacesMessage.SEVERITY_INFO,
                 "Form Submitted",
-                "Welcome " + fullName
+                String.format("Welcome %s to %s.", fullName, program)
         );
         FacesContext.getCurrentInstance()
                 .addMessage(null, message);
