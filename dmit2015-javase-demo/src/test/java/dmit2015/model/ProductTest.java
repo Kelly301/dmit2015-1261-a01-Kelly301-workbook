@@ -7,6 +7,7 @@ import static org.junit.jupiter.api.Assertions.*;
 
 class ProductTest {
 
+    // Test 1
     @Test
     void getName_whenProductCreated_shouldReturnCorrectName() {
         // Arrange
@@ -17,6 +18,7 @@ class ProductTest {
         assertThat(actualName).isEqualTo("Laptop");
     }
 
+    // Test 2
     @Test
     void getPrice_whenProductCreated_shouldReturnCorrectPrice() {
         // Arrange
@@ -27,6 +29,7 @@ class ProductTest {
         assertThat(actualPrice).isCloseTo(1200, within(0.01));
     }
 
+    // Test 3
     @Test
     void getPriceWithTax_whenProductCreated_shouldReturnCorrectPriceWithTax() {
         // Arrange
@@ -37,13 +40,48 @@ class ProductTest {
         assertThat(actualPriceWithTax).isCloseTo(1260, within(0.01));
     }
 
+    // Test 4
     @Test
     void constructor_whenNameIsNull_shouldThrowException() {
-        // Arrange
-
-        // Act
-
-        // Assert
+        assertThatThrownBy(() ->
+                new Product(null,1200)
+        ).isInstanceOf(IllegalArgumentException.class);
     }
+
+    @Test
+    void constructor_whenNameIsBlank_shouldThrowException() {
+        assertThatThrownBy(() ->
+                new Product("",1200)
+        ).isInstanceOf(IllegalArgumentException.class);
+    }
+
+    @Test
+    void constructor_whenNameIsWhiteSpace_shouldThrowException() {
+        assertThatThrownBy(() ->
+                new Product(" ",1200)
+        ).isInstanceOf(IllegalArgumentException.class).hasMessageContaining("required");
+    }
+
+    // Test 5
+    @Test
+    void constructor_whenPriceIsZero_shouldThrowException() {
+        assertThatThrownBy(() ->
+                new Product("Laptop", 0)
+        ).isInstanceOf(IllegalArgumentException.class).hasMessageContaining("greater than 0");
+    }
+
+    @Test
+    void constructor_whenPriceIsNegative_shouldThrowException() {
+        assertThatThrownBy(() ->
+                new Product("Laptop", -5)
+        ).isInstanceOf(IllegalArgumentException.class).hasMessageContaining("greater than 0");
+    }
+
+    // Guided Checkpoint: Explain why testing zero matters in addition to testing a negative price.
+    // A: because it's an edge case (no products should be free). Our validation excludes zeros, not just negative numbers.
+
+    // Run the Tests
+    // Temporarily change one expected result, run the test, and explain the failure. Restore the correct expectation and rerun all tests.
+    // A: I temporarily changed the description for .hasMessageContaining from "greater than 0" to "greater than 1". The failure means that the test works.
 
 }
