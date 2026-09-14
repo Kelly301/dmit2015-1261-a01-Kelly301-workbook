@@ -12,18 +12,26 @@
 
         <h:form>
             <h:messages />
+            <h:outputLabel value="First Name: "/>
+            <h:inputText value="#{greetingBean.firstName}"/>
 
-            <h:inputText
-                value="#{greetingBean.firstName}" />
+            <br/>
+            <br/>
 
-            <h:commandButton
-                value="Submit" />
+            <h:outputLabel value="Last Name: "/>
+            <h:inputText value="#{greetingBean.lastName}"/>
+
+            <br/>
+            <br/>
+
+            <h:commandButton value="Submit" />
 
             <br />
             <br />
 
-            <h:outputText
-                value="#{greetingBean.greetingMessage}" />
+            <h:outputText value="#{greetingBean.greetingMessage}" />
+
+            <br/>
 
             <h:outputText value="Apache Tomcat + Jakarta Faces" />
         </h:form>
