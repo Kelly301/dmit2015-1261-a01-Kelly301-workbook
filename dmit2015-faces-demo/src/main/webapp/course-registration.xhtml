@@ -30,6 +30,35 @@
 
         <br/><br/>
 
+        <p:outputLabel
+          for="courseName"
+          value="Course Name:"/>
+
+        <br/>
+
+        <p:selectOneMenu
+          id="courseName"
+          value="#{courseRegistrationBean.courseName}">
+
+          <f:selectItem
+            itemLabel="Select a Course"
+            itemValue=""/>
+
+          <f:selectItem
+            itemLabel="DMIT2015"
+            itemValue="DMIT2015"/>
+
+          <f:selectItem
+                  itemLabel="CPSC1517"
+                  itemValue="CPSC1517"/>
+
+          <f:selectItem
+                  itemLabel="SDEV2301"
+                  itemValue="SDEV2301"/>
+
+        </p:selectOneMenu>
+
+        <br/><br/>
 
       </p:panel>
     </h:form>
