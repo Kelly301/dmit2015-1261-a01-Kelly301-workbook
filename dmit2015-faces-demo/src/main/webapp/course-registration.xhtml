@@ -4,16 +4,17 @@
       xmlns:f="jakarta.faces.core"
       xmlns:h="jakarta.faces.html"
       xmlns:p="primefaces">
+
 <f:view>
   <h:head>
-    <title>Course Registration</title>
+    <title>Fall 2026 Course Registration Form</title>
   </h:head>
 
   <h:body>
-    <h2>DMIT2015 Course Registration</h2>
+    <h2>Fall 2026 Course Registration Form</h2>
 
     <h:form>
-      <p:messages id="messages"/>
+      <p:messages showDetail="true"/>
 
       <p:panel header="Student Registration Form">
         <p:outputLabel
@@ -56,6 +57,11 @@
                   itemLabel="SDEV2301"
                   itemValue="SDEV2301"/>
 
+
+          <f:selectItem
+                  itemLabel="DMIT2504"
+                  itemValue="DMIT2504"/>
+
         </p:selectOneMenu>
 
         <br/><br/>
@@ -69,11 +75,14 @@
 
         <p:commandButton
           value="Submit Registration"
-          action="#{courseRegistrationBean.submit}"
+          action="#{courseRegistrationBean.submit()}"
           update="@form"/>
 
       </p:panel>
     </h:form>
+
+    <h:outputText value="Powered by Jakarta Faces + PrimeFaces" />
+
   </h:body>
 </f:view>
 </html>
