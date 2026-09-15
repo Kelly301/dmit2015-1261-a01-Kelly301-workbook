@@ -60,6 +60,18 @@
 
         <br/><br/>
 
+        <p:selectBooleanCheckbox
+            value="#{courseRegistrationBean.onlineDelivery}"/>
+        <h:outputText
+          value=" Online Delivery"/>
+
+        <br/><br/>
+
+        <p:commandButton
+          value="Submit Registration"
+          action="#{courseRegistrationBean.submit}"
+          update="@form"/>
+
       </p:panel>
     </h:form>
   </h:body>
