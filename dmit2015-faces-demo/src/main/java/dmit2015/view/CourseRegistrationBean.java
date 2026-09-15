@@ -13,6 +13,7 @@ public class CourseRegistrationBean implements Serializable {
 
     private String studentName;
     private String courseName;
+    private String emailAddress;
     private boolean onlineDelivery;
 
     public String getStudentName() {
@@ -30,6 +31,10 @@ public class CourseRegistrationBean implements Serializable {
     public void setCourseName(String courseName) {
         this.courseName = courseName;
     }
+
+    public String getemailAddress() { return emailAddress; }
+
+    public void setemailAddress(String emailAddress) { this.emailAddress = emailAddress; }
 
     public boolean isOnlineDelivery() {
         return onlineDelivery;

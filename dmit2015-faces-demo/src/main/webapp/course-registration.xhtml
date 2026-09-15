@@ -32,6 +32,20 @@
         <br/><br/>
 
         <p:outputLabel
+          for="email"
+          value="Email Address:"/>
+
+        <br/>
+
+        <p:inputText
+          id="email"
+          value="#{courseRegistrationBean.emailAddress}"
+          required="true"
+          requiredMessage="Email Address is required"/>
+
+        <br/><br/>
+
+        <p:outputLabel
           for="courseName"
           value="Course Name:"/>
 
@@ -80,6 +94,8 @@
 
       </p:panel>
     </h:form>
+
+    <br/><br/>
 
     <h:outputText value="Powered by Jakarta Faces + PrimeFaces" />
 
