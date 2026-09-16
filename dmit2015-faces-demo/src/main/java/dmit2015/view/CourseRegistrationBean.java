@@ -72,11 +72,13 @@ public class CourseRegistrationBean implements Serializable {
         FacesContext.getCurrentInstance().addMessage(null, successMessage);
         FacesContext.getCurrentInstance().addMessage(null, registrationDetails);
         FacesContext.getCurrentInstance().addMessage("deliveryMessage", deliveryMessage);
-
-
     }
 
-
-
+    public void clearForm() {
+        studentName = "";
+        courseName = "";
+        emailAddress = "";
+        onlineDelivery = false;
+    }
 
 }

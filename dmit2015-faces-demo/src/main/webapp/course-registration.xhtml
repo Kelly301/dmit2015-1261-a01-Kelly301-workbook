@@ -92,6 +92,14 @@
           action="#{courseRegistrationBean.submit()}"
           update="@form"/>
 
+        <p:spacer width="10"/>
+
+        <p:commandButton
+          value="Clear Form"
+          styleClass="ui-button-warning"
+          action="#{courseRegistrationBean.clearForm()}"
+          update="@form"/>
+
         <br/><br/>
 
         <p:messages for="deliveryMessage"/>
