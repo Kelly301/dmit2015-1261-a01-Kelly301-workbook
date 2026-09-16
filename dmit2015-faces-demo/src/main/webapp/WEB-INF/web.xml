@@ -5,7 +5,7 @@
          version="6.1">
     
     <welcome-file-list>
-        <welcome-file>student-form.xhtml</welcome-file>
+        <welcome-file>course_registration.xhtml</welcome-file>
     </welcome-file-list>
 
     <!-- Keep empty input fields as null instead of as empty strings in the model. -->

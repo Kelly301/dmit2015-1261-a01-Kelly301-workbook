@@ -32,9 +32,13 @@ public class CourseRegistrationBean implements Serializable {
         this.courseName = courseName;
     }
 
-    public String getemailAddress() { return emailAddress; }
+    public String getEmailAddress() {
+        return emailAddress;
+    }
 
-    public void setemailAddress(String emailAddress) { this.emailAddress = emailAddress; }
+    public void setEmailAddress(String emailAddress) {
+        this.emailAddress = emailAddress;
+    }
 
     public boolean isOnlineDelivery() {
         return onlineDelivery;
@@ -47,12 +51,32 @@ public class CourseRegistrationBean implements Serializable {
     public void submit() {
         String deliveryMode = onlineDelivery ? "Online" : "In-Person";
 
-        FacesMessage message = new FacesMessage(
+        FacesMessage successMessage = new FacesMessage(
                 FacesMessage.SEVERITY_INFO,
                 "Registration Submitted",
-                String.format("%s registered for %s (%s)", studentName, courseName, deliveryMode)
+                null
         );
 
-        FacesContext.getCurrentInstance().addMessage(null, message);
+        FacesMessage registrationDetails = new FacesMessage(
+                FacesMessage.SEVERITY_INFO,
+                String.format("%s registered for %s (%s)", studentName, courseName, deliveryMode),
+                null
+        );
+
+        FacesMessage deliveryMessage = new FacesMessage(
+                FacesMessage.SEVERITY_INFO,
+                String.format("Delivery Mode: %s", deliveryMode),
+                null
+        );
+
+        FacesContext.getCurrentInstance().addMessage(null, successMessage);
+        FacesContext.getCurrentInstance().addMessage(null, registrationDetails);
+        FacesContext.getCurrentInstance().addMessage("deliveryMessage", deliveryMessage);
+
+
     }
+
+
+
+
 }

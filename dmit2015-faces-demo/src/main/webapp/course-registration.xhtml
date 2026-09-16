@@ -14,7 +14,7 @@
     <h2>Fall 2026 Course Registration Form</h2>
 
     <h:form>
-      <p:messages showDetail="true"/>
+      <p:messages id="messages" forIgnores="deliveryMessage"/>
 
       <p:panel header="Student Registration Form">
         <p:outputLabel
@@ -92,11 +92,9 @@
           action="#{courseRegistrationBean.submit()}"
           update="@form"/>
 
-        <p:outputLabel
-                for="deliveryMode"
-                value="Delivery Mode: "/>
+        <br/><br/>
 
-
+        <p:messages for="deliveryMessage"/>
 
       </p:panel>
     </h:form>
